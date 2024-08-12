@@ -5,6 +5,7 @@ import { RiUserLocationFill } from "react-icons/ri";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
 import Link from "next/link";
 import { CgArrowLongRight } from "react-icons/cg";
+import { data } from "@/app/_components/data";
 
 
 
@@ -56,7 +57,7 @@ export default function Home() {
     Find Your Neighborhood<span className="text-[#92400e]">.</span>
   </h3>
   <div className="absolute right-4 bottom-4 flex items-center font-bold hover:text-[#3b83f6d6]">
-    <span className="text-sm sm:text-base lg:text-lg mr-1 text-[#3b83f6d6] hover:text-[#92400e] cursor-pointer">Explore all</span>
+    <Link href='/properties'><h3 className="text-sm sm:text-base lg:text-lg mr-1 text-[#3b83f6d6] hover:text-[#92400e] cursor-pointer">Explore all</h3></Link>
     <CgArrowLongRight size={24} className='hover:text-[#92400e] cursor-pointer'/>
   </div>
 </section>
@@ -64,64 +65,43 @@ export default function Home() {
 
 
    
-<section className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 my-8">
-  {/* Card 1 */}
-  <div className="border rounded-lg p-4 shadow-lg text-center">
-    <Image 
-      src="/images/house1.jpg" 
-      alt="Property Thumbnail" 
-      width={700} 
-      height={900} 
-      className="object-cover mx-auto"
-    />
-    <h4 className="font-semibold mt-5 text-xl sm:text-2xl lg:text-3xl text-[#3b83f6d6]">Sinomen Plant Palace.</h4>
-    <p className="text-gray-600 mt-2 font-bold underline underline-offset-1 text-sm sm:text-base lg:text-lg">253 Montril Street, New York</p>
-    <p className="mt-2 text-sm sm:text-base lg:text-lg">Added: March 8, 2022</p>
-    <p className="font-bold mt-2 text-lg sm:text-xl lg:text-2xl">
-      <span className='bg-[#3b83f6d6]'>-----</span> Price: <span className='text-[#3b83f6d6]'>$</span>155200 <span className='bg-[#3b83f6d6]'>-----</span>
-    </p>
-    <p className="mt-2 text-sm sm:text-base lg:text-lg">Size: 1450 Sq.ft</p>
-    <p className="mt-2 text-sm sm:text-base lg:text-lg">3 Bed - 2 Bath - 1 Garage</p>
-  </div>
-
-  {/* Card 2 */}
-  <div className="border rounded-lg p-4 shadow-lg text-center mt-6 sm:mt-0">
-    <Image 
-      src="/images/house2.jpg" 
-      alt="Property Thumbnail" 
-      width={700} 
-      height={900} 
-      className="object-cover mx-auto"
-    />
-    <h4 className="font-semibold mt-5 text-xl sm:text-2xl lg:text-3xl text-[#3b83f6d6]">Duplex de Villa.</h4>
-    <p className="text-gray-600 mt-2 font-bold underline underline-offset-1 text-sm sm:text-base lg:text-lg">253 Montril Street, New York</p>
-    <p className="mt-2 text-sm sm:text-base lg:text-lg">Added: March 8, 2022</p>
-    <p className="font-bold mt-2 text-lg sm:text-xl lg:text-2xl">
-      <span className='bg-[#3b83f6d6]'>-----</span> Price: <span className='text-[#3b83f6d6]'>$</span>155200 <span className='bg-[#3b83f6d6]'>-----</span>
-    </p>
-    <p className="mt-2 text-sm sm:text-base lg:text-lg">Size: 1450 Sq.ft</p>
-    <p className="mt-2 text-sm sm:text-base lg:text-lg">3 Bed - 2 Bath - 1 Garage</p>
-  </div>
-
-  {/* Card 3 */}
-  <div className="border rounded-lg p-4 shadow-lg text-center mt-6 lg:mt-0">
-    <Image 
-      src="/images/house3.jpg" 
-      alt="Property Thumbnail" 
-      width={700} 
-      height={900} 
-      className="object-cover mx-auto"
-    />
-    <h4 className="font-semibold mt-5 text-xl sm:text-2xl lg:text-3xl text-[#3b83f6d6]">Orchid Casel de Paradise.</h4>
-    <p className="text-gray-600 mt-2 font-bold underline underline-offset-1 text-sm sm:text-base lg:text-lg">253 Montril Street, New York</p>
-    <p className="mt-2 text-sm sm:text-base lg:text-lg">Added: March 8, 2022</p>
-    <p className="font-bold mt-2 text-lg sm:text-xl lg:text-2xl">
-      <span className='bg-[#3b83f6d6]'>-----</span> Price: <span className='text-[#3b83f6d6]'>$</span>155200 <span className='bg-[#3b83f6d6]'>-----</span>
-    </p>
-    <p className="mt-2 text-sm sm:text-base lg:text-lg">Size: 1450 Sq.ft</p>
-    <p className="mt-2 text-sm sm:text-base lg:text-lg">3 Bed - 2 Bath - 1 Garage</p>
-  </div>
-</section>
+<section className="mt-7 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
+        {data.filter((house)=> house.add == '18B Central Street, Sun Francisco').map((house)=>{
+            return(
+                <div key={house.id} className="border rounded-lg p-4 shadow-lg text-center relative">
+              <Image
+                src= {house.image}
+                alt="Property Thumbnail"
+                width={700}
+                height={900}
+                className="object-cover mb-2 mx-auto rounded-lg"
+              />
+              <div
+                className={` inset-0 flex  justify-center px-2 py-1 text-sm font-semibold text-white rounded ${
+                  house.status === "for sale" ? "bg-[#92400e]" : "bg-[#3b83f6d6]"
+                }`}
+              >
+                {house.status}
+              </div>
+              <h4 className="font-semibold mt-5 text-2xl sm:text-3xl text-[#3b83f6d6]">
+                {house.name}
+              </h4>
+              <p className="text-gray-600 mt-3 font-bold underline underline-offset-1">
+                {house.location}
+              </p>
+              <p className="mt-3">{house.date}</p>
+              <p className="font-bold mt-3 text-xl">
+                <span className="bg-[#3b83f6d6]">-----</span>
+                <span className="text-[#3b83f6d6]">$</span>
+                {house.price}
+                <span className="bg-[#3b83f6d6]">-----</span>
+              </p>
+              <p className="mt-3">{house.size}Sq.ft</p>
+              <p className="mt-3">{house.amenities}</p>
+            </div>
+            )
+        })}
+      </section>
 
 
    
@@ -183,19 +163,19 @@ export default function Home() {
   <div className="mt-6 md:mt-10 flex flex-col md:flex-row justify-center md:justify-end text-center">
     <ul className="flex flex-wrap justify-center gap-4 md:gap-10">
       <li className="text-[#3b83f6d6] hover:text-[#92400e] text-xl md:text-2xl">
-        <Link href='/'>Properties</Link>
+        <Link href='/properties'>Properties</Link>
       </li>
       <li className="text-[#3b83f6d6] hover:text-[#92400e] text-xl md:text-2xl">
-        <Link href='/'>For Buy</Link>
+        <Link href='/forbuy'>For Buy</Link>
       </li>
       <li className="text-[#3b83f6d6] hover:text-[#92400e] text-xl md:text-2xl">
-        <Link href='/'>For Sale</Link>
+        <Link href='/forsale'>For Sale</Link>
       </li>
       <li className="text-[#3b83f6d6] hover:text-[#92400e] text-xl md:text-2xl">
-        <Link href='/'>For Rent</Link>
+        <Link href='/forrent'>For Rent</Link>
       </li>
       <li className="text-[#3b83f6d6] hover:text-[#92400e] text-xl md:text-2xl">
-        <Link href='/'>Co-Living</Link>
+        <Link href='/coliving'>Co-Living</Link>
       </li>
     </ul>
   </div>
@@ -209,130 +189,41 @@ export default function Home() {
 {/* sixproperties */}
 <section className="mt-7 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
   {/* Property 1 */}
-  <div className="border rounded-lg p-4 shadow-lg text-center">
-    <Image 
-      src="/images/house11.jpg" 
-      alt="Property Thumbnail" 
-      width={700} 
-      height={900} 
-      className="object-cover mb-2 mx-auto rounded-lg" 
-    />
-    <h4 className="font-semibold mt-5 text-2xl sm:text-3xl text-[#3b83f6d6]">Sinomen Plant Palace.</h4>
-    <p className="text-gray-600 mt-3 font-bold underline underline-offset-1">253 Montril Street, New York</p>
-    <p className="mt-3">Added: March 8, 2022</p>
-    <p className="font-bold mt-3 text-xl">
-      <span className="bg-[#3b83f6d6]">-----</span>
-      Price: <span className="text-[#3b83f6d6]">$</span>155200
-      <span className="bg-[#3b83f6d6]">-----</span>
-    </p>
-    <p className="mt-3">Size: 1450 Sq.ft</p>
-    <p className="mt-3">3 Bed - 2 Bath - 1 Garage</p>
-  </div>
-
-  {/* Property 2 */}
-  <div className="border rounded-lg p-4 shadow-lg text-center">
-    <Image 
-      src="/images/house10.jpg" 
-      alt="Property Thumbnail" 
-      width={700} 
-      height={900} 
-      className="object-cover mb-2 mx-auto rounded-lg" 
-    />
-    <h4 className="font-semibold mt-5 text-2xl sm:text-3xl text-[#3b83f6d6]">Duplex de Villa.</h4>
-    <p className="text-gray-600 mt-3 font-bold underline underline-offset-1">253 Montril Street, New York</p>
-    <p className="mt-3">Added: March 8, 2022</p>
-    <p className="font-bold mt-3 text-xl">
-      <span className="bg-[#3b83f6d6]">-----</span>
-      Price: <span className="text-[#3b83f6d6]">$</span>155200
-      <span className="bg-[#3b83f6d6]">-----</span>
-    </p>
-    <p className="mt-3">Size: 1450 Sq.ft</p>
-    <p className="mt-3">3 Bed - 2 Bath - 1 Garage</p>
-  </div>
-
-  {/* Property 3 */}
-  <div className="border rounded-lg p-4 shadow-lg text-center">
-    <Image 
-      src="/images/house6.jpg" 
-      alt="Property Thumbnail" 
-      width={700} 
-      height={900} 
-      className="object-cover mb-2 mx-auto rounded-lg" 
-    />
-    <h4 className="font-semibold mt-5 text-2xl sm:text-3xl text-[#3b83f6d6]">Orchid Casel de Paradise.</h4>
-    <p className="text-gray-600 mt-3 font-bold underline underline-offset-1">253 Montril Street, New York</p>
-    <p className="mt-3">Added: March 8, 2022</p>
-    <p className="font-bold mt-3 text-xl">
-      <span className="bg-[#3b83f6d6]">-----</span>
-      Price: <span className="text-[#3b83f6d6]">$</span>155200
-      <span className="bg-[#3b83f6d6]">-----</span>
-    </p>
-    <p className="mt-3">Size: 1450 Sq.ft</p>
-    <p className="mt-3">3 Bed - 2 Bath - 1 Garage</p>
-  </div>
-
-  {/* Property 4 */}
-  <div className="border rounded-lg p-4 shadow-lg text-center">
-    <Image 
-      src="/images/house7.jpg" 
-      alt="Property Thumbnail" 
-      width={700} 
-      height={900} 
-      className="object-cover mb-2 mx-auto rounded-lg" 
-    />
-    <h4 className="font-semibold mt-5 text-2xl sm:text-3xl text-[#3b83f6d6]">Ruposibangla de Parlosia.</h4>
-    <p className="text-gray-600 mt-3 font-bold underline underline-offset-1">253 Montril Street, New York</p>
-    <p className="mt-3">Added: March 8, 2022</p>
-    <p className="font-bold mt-3 text-xl">
-      <span className="bg-[#3b83f6d6]">-----</span>
-      Price: <span className="text-[#3b83f6d6]">$</span>155200
-      <span className="bg-[#3b83f6d6]">-----</span>
-    </p>
-    <p className="mt-3">Size: 1450 Sq.ft</p>
-    <p className="mt-3">3 Bed - 2 Bath - 1 Garage</p>
-  </div>
-
-  {/* Property 5 */}
-  <div className="border rounded-lg p-4 shadow-lg text-center">
-    <Image 
-      src="/images/house8.jpg" 
-      alt="Property Thumbnail" 
-      width={700} 
-      height={900} 
-      className="object-cover mb-2 mx-auto rounded-lg" 
-    />
-    <h4 className="font-semibold mt-5 text-2xl sm:text-3xl text-[#3b83f6d6]">Sinomen Studio Palace.</h4>
-    <p className="text-gray-600 mt-3 font-bold underline underline-offset-1">253 Montril Street, New York</p>
-    <p className="mt-3">Added: March 8, 2022</p>
-    <p className="font-bold mt-3 text-xl">
-      <span className="bg-[#3b83f6d6]">-----</span>
-      Price: <span className="text-[#3b83f6d6]">$</span>155200
-      <span className="bg-[#3b83f6d6]">-----</span>
-    </p>
-    <p className="mt-3">Size: 1450 Sq.ft</p>
-    <p className="mt-3">3 Bed - 2 Bath - 1 Garage</p>
-  </div>
-
-  {/* Property 6 */}
-  <div className="border rounded-lg p-4 shadow-lg text-center">
-    <Image 
-      src="/images/house9.jpg" 
-      alt="Property Thumbnail" 
-      width={700} 
-      height={900} 
-      className="object-cover mb-2 mx-auto rounded-lg" 
-    />
-    <h4 className="font-semibold mt-5 text-2xl sm:text-3xl text-[#3b83f6d6]">Elite Garden Residence.</h4>
-    <p className="text-gray-600 mt-3 font-bold underline underline-offset-1">253 Montril Street, New York</p>
-    <p className="mt-3">Added: March 8, 2022</p>
-    <p className="font-bold mt-3 text-xl">
-      <span className="bg-[#3b83f6d6]">-----</span>
-      Price: <span className="text-[#3b83f6d6]">$</span>155200
-      <span className="bg-[#3b83f6d6]">-----</span>
-    </p>
-    <p className="mt-3">Size: 1450 Sq.ft</p>
-    <p className="mt-3">3 Bed - 2 Bath - 1 Garage</p>
-  </div>
+  {data.filter((house)=> house.price == '155200').map((house)=>{
+            return(
+                <div key={house.id} className="border rounded-lg p-4 shadow-lg text-center relative">
+              <Image
+                src= {house.image}
+                alt="Property Thumbnail"
+                width={700}
+                height={900}
+                className="object-cover mb-2 mx-auto rounded-lg"
+              />
+              <div
+                className={` inset-0 flex  justify-center px-2 py-1 text-sm font-semibold text-white rounded ${
+                  house.status === "for sale" ? "bg-[#92400e]" : "bg-[#3b83f6d6]"
+                }`}
+              >
+                {house.status}
+              </div>
+              <h4 className="font-semibold mt-5 text-2xl sm:text-3xl text-[#3b83f6d6]">
+                {house.name}
+              </h4>
+              <p className="text-gray-600 mt-3 font-bold underline underline-offset-1">
+                {house.location}
+              </p>
+              <p className="mt-3">{house.date}</p>
+              <p className="font-bold mt-3 text-xl">
+                <span className="bg-[#3b83f6d6]">-----</span>
+                <span className="text-[#3b83f6d6]">$</span>
+                {house.price}
+                <span className="bg-[#3b83f6d6]">-----</span>
+              </p>
+              <p className="mt-3">{house.size}Sq.ft</p>
+              <p className="mt-3">{house.amenities}</p>
+            </div>
+            )
+        })}
 </section>
 
  
@@ -384,7 +275,7 @@ export default function Home() {
     Find Your Neighborhood<span className='text-[#92400e]'>.</span>
   </h3>
   <div className="absolute right-4 sm:right-6 bottom-4 flex items-center font-bold hover:text-[#3b83f6d6]">
-    <span className="text-sm sm:text-base lg:text-lg mr-1 text-[#3b83f6d6] hover:text-[#92400e] cursor-pointer">Explore all</span>
+    <Link href='/properties'><span className="text-sm sm:text-base lg:text-lg mr-1 text-[#3b83f6d6] hover:text-[#92400e] cursor-pointer">Explore all</span></Link>
     <CgArrowLongRight size={22} className='text-[#3b83f6d6] hover:text-[#92400e] cursor-pointer' />
   </div>
 </section>
@@ -404,7 +295,7 @@ export default function Home() {
       height={1000}  
       className="object-cover mx-auto rounded-lg"
     />
-    <h4 className="font-semibold mt-5 text-2xl sm:text-3xl text-[#3b83f6d6] hover:text-[#92400e]">New York</h4>
+    <Link href='/'><h4 className="font-semibold mt-5 text-2xl sm:text-3xl text-[#3b83f6d6] hover:text-[#92400e]">New York</h4></Link>
     <p className="text-gray-600 mt-2 font-bold underline underline-offset-1 hover:text-[#92400e]">2 Properties</p>
   </div>
 

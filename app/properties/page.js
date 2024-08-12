@@ -43,7 +43,7 @@ export default function Page() {
         <div className="flex justify-center mt-7 lg:mt-20">
           <ul className="text-lg md:text-2xl lg:text-3xl flex flex-wrap justify-center items-center font-bold list-none gap-4 md:gap-8 lg:gap-10 m-4 md:m-8">
             <li className="text-[#92400e] hover:text-[#3b83f6d6]">
-              <Link href="/">For Buy</Link>
+              <Link href="/forbuy">For Buy</Link>
             </li>
             <li className="text-[#92400e] hover:text-[#3b83f6d6]">
               <Link href="/For Sale">For Sale</Link>

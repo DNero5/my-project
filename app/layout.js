@@ -1,5 +1,5 @@
 import '@/app/_styles/globals.css'  ;
-import {Lora} from 'next/font/google'
+import {Neuton} from 'next/font/google'
 import Navbar from "./_components/Navbar";
 import Footer from './_components/Footer';
 
@@ -8,8 +8,9 @@ export const metadata = {
   title: "My Real Estate Website",
 };
 
-const lora = Lora({
-   weight: ['400', '700', '500', '600'],
+
+const newton = Neuton({
+   weight: ['200', '300', '400', '700'],
    style: ['normal', 'italic'],
    subsets: ['latin'],
    display: 'swap',
@@ -17,7 +18,7 @@ const lora = Lora({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={lora.className}>
+    <html lang="en" className={newton.className}>
       <body>
         <main className="max-w-[1260px] mx-auto">
           <Navbar />

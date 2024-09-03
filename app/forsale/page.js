@@ -1,6 +1,9 @@
 import React from "react";
 import { data } from "@/app/_components/data";
 import Image from "next/image";
+import Rpartners from "@/app/_components/Rpartners";
+import Link from "next/link";
+
 
 export default function Page() {
   return (
@@ -54,12 +57,14 @@ export default function Page() {
                 className="object-cover mb-2 mx-auto rounded-lg"
               />
               <div
-                className={` inset-0 flex  justify-center px-2 py-1 text-sm font-semibold text-white rounded ${
-                  house.status === "for sale" ? "bg-[#3b83f6d6]" : "bg-[#92400e]"
-                }`}
-              >
-                {house.status}
-              </div>
+                  className={`absolute top-2 right-2 px-2 py-1 text-sm font-semibold text-white rounded ${
+                    house.status === "for sale, for buy"
+                      ? "bg-[#3b83f6d6]"
+                      : "bg-[#92400e]"
+                  }`}
+                >
+                  {house.status}
+                </div>
               <h4 className="font-semibold mt-5 text-2xl sm:text-3xl text-[#3b83f6d6]">
                 {house.name}
               </h4>
@@ -75,10 +80,21 @@ export default function Page() {
               </p>
               <p className="mt-3">{house.size}Sq.ft</p>
               <p className="mt-3">{house.amenities}</p>
+              {/* View Details Link */}
+              {house.name && (
+                  <Link
+                    href={`properties/${house.name.split(" ").join("")}`}
+                    className="text-[#3b83f6d6] hover:underline mt-4 block"
+                  >
+                    View Details
+                  </Link>
+                )}
             </div>
             )
         })}
       </section>
+      {/* Recommended Partners Section */}
+      <Rpartners />
     </main>
   );
 }

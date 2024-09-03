@@ -1,6 +1,8 @@
 import React from "react";
 import { data } from "@/app/_components/data";
 import Image from "next/image";
+import Link from "next/link";
+import Rpartners from "@/app/_components/Rpartners";
 
 export default function Page() {
   return (
@@ -12,7 +14,7 @@ export default function Page() {
 
       <section
         className="rounded-lg relative bg-cover bg-center h-screen"
-        style={{ backgroundImage: "url(/images/bgrent.jpg" }}
+        style={{ backgroundImage: "url(/images/bgrent.jpg)" }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
@@ -53,13 +55,15 @@ export default function Page() {
                 height={900}
                 className="object-cover mb-2 mx-auto rounded-lg"
               />
-              <div
-                className={` inset-0 flex  justify-center px-2 py-1 text-sm font-semibold text-white rounded ${
-                  house.status === "For rent" ? "bg-[#3b83f6d6]" : "bg-[#92400e]"
-                }`}
-              >
-                {house.status}
-              </div>
+               <div
+                  className={`absolute top-2 right-2 px-2 py-1 text-sm font-semibold text-white rounded ${
+                    house.status === "for sale, for buy"
+                      ? "bg-[#3b83f6d6]"
+                      : "bg-[#92400e]"
+                  }`}
+                >
+                  {house.status}
+                </div>
               <h4 className="font-semibold mt-5 text-2xl sm:text-3xl text-[#3b83f6d6]">
                 {house.name}
               </h4>
@@ -75,10 +79,21 @@ export default function Page() {
               </p>
               <p className="mt-3">{house.size}Sq.ft</p>
               <p className="mt-3">{house.amenities}</p>
+              {/* View Details Link */}
+              {house.name && (
+                  <Link
+                    href={`properties/${house.name.split(" ").join("")}`}
+                    className="text-[#3b83f6d6] hover:underline mt-4 block"
+                  >
+                    View Details
+                  </Link>
+                )}
             </div>
             )
         })}
       </section>
+       {/* Recommended Partners Section */}
+       <Rpartners />
     </main>
   );
 }

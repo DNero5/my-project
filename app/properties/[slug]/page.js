@@ -32,136 +32,87 @@ export default function Page({ params }) {
         </div>
       </section>
 
-     
-      <section class=" mt-7 container mx-auto px-4 py-8">
-        <div class="flex flex-col md:flex-row gap-8">
-          {/* <!-- Property Image and Details --> */}
-          <div class="w-full md:w-2/3">
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      {/* Property Details Section */}
+      <section className="mt-7 container mx-auto px-4 py-8">
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Property Image and Details */}
+          <div className="w-full md:w-2/3">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <img
                 src={property.image}
                 alt="Property Image"
-                class="w-full h-auto"
+                className="w-full h-auto"
               />
-              <div class="mt-7">
-              <h2 class="text-4xl font-bold text-[#3b83f6d6] mt-2">
-                {property.name}
+              <div className="mt-7">
+                <h2 className="text-4xl font-bold text-[#3b83f6d6] mt-2">
+                  {property.name}
                 </h2>
-                <h2 class="text-2xl font-bold">
-                <span className="text-[#3b83f6d6]">Location;</span> {property.location}
+                <h2 className="text-2xl font-bold">
+                  <span className="text-[#3b83f6d6]">Location:</span> {property.location}
                 </h2>
-                <h2 class="text-2xl font-bold">
-                <span className="text-[#3b83f6d6]">Date;</span> {property.date}
+                <h2 className="text-2xl font-bold">
+                  <span className="text-[#3b83f6d6]">Date:</span> {property.date}
                 </h2>
-                <h2 class="text-2xl font-bold">
-                <span className="text-[#3b83f6d6]">Price;</span> {property.price}
+                <h2 className="text-2xl font-bold">
+                  <span className="text-[#3b83f6d6]">Price:</span> {property.price}
                 </h2>
-                <h2 class="text-2xl font-bold">
-                <span className="text-[#3b83f6d6]">Status;</span> {property.status}
+                <h2 className="text-2xl font-bold">
+                  <span className="text-[#3b83f6d6]">Status:</span> {property.status}
                 </h2>
-                <h2 class="text-2xl font-bold">
-                <span className="text-[#3b83f6d6]">Size;</span> {property.size}Sq.fit
+                <h2 className="text-2xl font-bold">
+                  <span className="text-[#3b83f6d6]">Size:</span> {property.size} Sq.ft
                 </h2>
-                <h2 class="text-2xl font-bold">
-                <span className="text-[#3b83f6d6]">Amenities;</span> {property.amenities}
+                <h2 className="text-2xl font-bold">
+                  <span className="text-[#3b83f6d6]">Amenities:</span> {property.amenities}
                 </h2>
-                <p class="text-gray-600 mt-4 font-semibold">
-                  Huge number of properties available here for buy, sell and
-                  Rent. Also you find here co-living property, lots of
-                  opportunities you have to choose here and enjoy huge discounts
-                  you can get. These cases are perfectly simple and easy to
-                  distinguish. In a free hour, when our power of choice is
-                  untrammeled and when nothing prevents our being able to do
-                  what we like best, every pleasure is welcomed and every pain
-                  avoided are matters of choice.
+                <p className="text-gray-600 mt-4 font-semibold">
+                  Huge number of properties available here for buy, sell, and rent.
+                  Also, you find co-living properties here, lots of opportunities to choose from,
+                  and enjoy huge discounts. You can get these cases perfectly simple and easy
+                  to distinguish. In a free hour, when our power of choice is untrammeled, and
+                  when nothing prevents us from being able to do what we like best, every pleasure
+                  is welcomed, and every pain avoided are matters of choice.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* <!-- Sidebar with Property Search --> */}
-          <div class="w-full md:w-1/3  p-6 rounded-lg shadow-md">
-            <h3 class="text-[#3b83f6d6] text-xl font-bold mb-4">
+          {/* Sidebar with Property Search */}
+          <div className="w-full md:w-1/3 p-6 rounded-lg shadow-md">
+            <h3 className="text-[#3b83f6d6] text-xl font-bold mb-4">
               Property Search.
             </h3>
-            <form class="space-y-4">
+            <form className="space-y-4">
               <div>
-                <label class="block text-sm text-[#3b83f6d6] mb-2" for="location">
-                  <i class="fas fa-map-marker-alt text-[#3b83f6d6] mr-2"></i>
+                <label className="block text-sm text-[#3b83f6d6] mb-2" htmlFor="location">
+                  <i className="fas fa-map-marker-alt text-[#3b83f6d6] mr-2"></i>
                   Location
                 </label>
                 <input
                   type="text"
                   id="location"
-                  class="w-full border border-[#3b83f6d6]  px-4 py-2 text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-[#92400e] focus:border-transparent"
+                  className="w-full border border-[#3b83f6d6] px-4 py-2 text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-[#92400e] focus:border-transparent"
                   placeholder="Location"
                   required
                 />
               </div>
               <div>
-                <label class="block text-sm text-[#3b83f6d6] mb-2" for="category">
-                  <i class="fas fa-th-large text-[#3b83f6d6] mr-2"></i>Property
-                  Category
+                <label className="block text-sm text-[#3b83f6d6] mb-2" htmlFor="category">
+                  <i className="fas fa-th-large text-[#3b83f6d6] mr-2"></i>Property Category
                 </label>
                 <select
                   id="category"
-                  class="w-full border border-[#3b83f6d6]  px-4 py-2 text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-[#92400e] focus:border-transparent"
+                  className="w-full border border-[#3b83f6d6] px-4 py-2 text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-[#92400e] focus:border-transparent"
                 >
                   <option>Choose Category</option>
                   <option>Property Type A</option>
                   <option>Property Type B</option>
                 </select>
               </div>
-              <div>
-                <label class="block text-sm text-[#3b83f6d6] mb-2" for="type">
-                  <i class="fas fa-home text-[#3b83f6d6] mr-2"></i>Property Type
-                </label>
-                <select
-                  id="type"
-                  class="w-full border border-[#3b83f6d6]  px-4 py-2 text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-[#92400e] focus:border-transparent"
-                >
-                  <option>Choose Type</option>
-                  <option>Property</option>
-                  <option>Category</option>
-                </select>
-              </div>
-              <div>
-                <label
-                  class="block text-sm text-[#3b83f6d6] mb-2"
-                  for="price-range"
-                >
-                  <i class="fas fa-dollar-sign text-[#3b83f6d6] mr-2"></i>Price
-                  Range
-                </label>
-                <select
-                  id="price-range"
-                  class="w-full border border-[#3b83f6d6]  px-4 py-2 text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-[#92400e] focus:border-transparent"
-                  >
-                  <option>Choose Range</option>
-                  <option>$100000</option>
-                  <option>$200000</option>
-                </select>
-              </div>
-              <div>
-                <label
-                  class="block text-sm text-gray-700 mb-2"
-                  for="property-size"
-                >
-                  <i class="fas fa-ruler-combined text-[#3b83f6d6] mr-2"></i>
-                  Property Size
-                </label>
-                <select
-                  id="property-size"
-                  class="w-full border border-[#3b83f6d6]  px-4 py-2 text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-[#92400e] focus:border-transparent"
-                  >
-                  <option>Choose Size</option>
-                  <option>1200 sqft</option>
-                  <option>1500 sqft</option>
-                </select>
-              </div>
+              {/* Other Form Fields */}
               <button
                 type="submit"
-                class="bg-[#3b83f6d6] text-[#fff] hover:bg-[#92400e] p-5 rounded-[10px]"
+                className="bg-[#3b83f6d6] text-[#fff] hover:bg-[#92400e] p-5 rounded-[10px]"
               >
                 Search
               </button>
@@ -170,6 +121,7 @@ export default function Page({ params }) {
         </div>
       </section>
 
+      {/* Partners Section */}
       <section className="mt-10 sm:mt-20 lg:mt-25 mb-8 bg-cream p-4 rounded-lg shadow-lg">
         <h2 className="text-2xl underline underline-offset-1">Our Partners</h2>
         <h3 className="mt-4 sm:mt-7 text-3xl sm:text-4xl font-bold text-[#3b83f6d6]">

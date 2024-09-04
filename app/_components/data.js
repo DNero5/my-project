@@ -10,6 +10,8 @@ export const data = [
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     add: "explore",
+    case: "All",
+     type: "Houses"
   },
 
   {
@@ -17,12 +19,14 @@ export const data = [
     name: "Duplex de Villa.",
     location: "18B Central Street, New York",
     date: "Added: March 8, 2023",
-    price: "155200",
+    price: "255200",
     image: "/images/house2.jpg",
     status: "for sale",
     size: "1451",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     add: "explore",
+    case: "All",
+     type: "Apartment"
   },
 
   {
@@ -30,12 +34,14 @@ export const data = [
     name: "Orchid Casel de Paradise.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
-    price: "155200",
+    price: "355200",
     image: "/images/house3.jpg",
     status: "for buy",
     size: "1452",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     add: "explore",
+    case: "All",
+    type: "Villa"
   },
   {
     id: 4,
@@ -47,6 +53,8 @@ export const data = [
     status: "for sale",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Houses"
   },
 
   {
@@ -54,22 +62,26 @@ export const data = [
     name: "Gose Hill Mansion.",
     location: "194 Mercer Street, Washington",
     date: "Added: March 8, 2023",
-    price: "155200",
+    price: "255200",
     image: "/images/house5.jpg",
     status: "For rent",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Apartment"
   },
   {
     id: 6,
     name: "Parriet Whillips Dungalow.",
     location: "5B Central Street, California",
     date: "Added: March 8, 2023",
-    price: "155200",
+    price: "355200",
     image: "/images/house6.jpg",
     status: "For Co-Living",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Villa"
   },
   {
     id: 7,
@@ -82,6 +94,8 @@ export const data = [
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     place: "New York",
+    case: "All",
+    type: "Apartment"
   },
   {
     id: 8,
@@ -94,6 +108,8 @@ export const data = [
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     place: "New York",
+    case: "All",
+    type: "Houses"
   },
   {
     id: 9,
@@ -106,18 +122,22 @@ export const data = [
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     place: "New York",
+    case: "All",
+    type: "Villa"
   },
   {
     id: 10,
     name: "Damola Garden Resedence.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
-    price: "255300",
+    price: "155300",
     image: "/images/house10.jpg",
     status: "For buy",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     place: "Chicago",
+    case: "All",
+    type: "Apartment"
   },
   {
     id: 11,
@@ -129,29 +149,35 @@ export const data = [
     status: "For sale",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Houses"
   },
   {
     id: 12,
     name: "kelvin Villa.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
-    price: "255300",
+    price: "355300",
     image: "/images/house3.jpg",
     status: "For Co-Living",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     place: "Chicago",
+    case: "All",
+    type: "Villa"
   },
   {
     id: 13,
     name: "David Villa.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
-    price: "255300",
+    price: "155300",
     image: "/images/house1.jpg",
     status: "For rent",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Apartment"
   },
   {
     id: 14,
@@ -163,28 +189,35 @@ export const data = [
     status: "For sale",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Houses"
   },
   {
     id: 15,
     name: "Solly Nrown House.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
-    price: "255300",
+    price: "355300",
     image: "/images/house8.jpg",
     status: "For Co-Living",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Villa"
   },
   {
     id: 16,
     name: "Gose Hill Mansion.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
-    price: "255300",
+    price: "155300",
     image: "/images/house16.jpg",
     status: "For buy",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Apartment"
+
   },
   {
     id: 17,
@@ -196,28 +229,34 @@ export const data = [
     status: "For sale",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Houses"
   },
   {
     id: 18,
     name: "Parriet Whillips Dungalow.",
     location: "18B Central Street, New York",
     date: "Added: March 8, 2023",
-    price: "255300",
+    price: "355300",
     image: "/images/house2.jpg",
     status: "For rent",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Villa"
   },
   {
     id: 19,
     name: "Darold Lloyd Estate.",
     location: "18B Central Street, New York",
     date: "Added: March 8, 2023",
-    price: "255300",
+    price: "155300",
     image: "/images/house1.jpg",
     status: "For buy",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Apartment"
   },
   {
     id: 20,
@@ -229,28 +268,34 @@ export const data = [
     status: "For sale",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Houses"
   },
   {
     id: 21,
     name: "Duplex de Villa.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
-    price: "255300",
+    price: "355300",
     image: "/images/house1.jpg",
     status: "For Co-Living",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Villa"
   },
   {
     id: 22,
     name: "Orchid Casel de Paradise.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
-    price: "255300",
+    price: "155300",
     image: "/images/house22.jpg",
     status: "For buy",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Apartment"
   },
   {
     id: 23,
@@ -262,28 +307,34 @@ export const data = [
     status: "For rent",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Houses"
   },
   {
     id: 24,
     name: "Sinomen Studio Palace.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
-    price: "255300",
+    price: "355300",
     image: "/images/house24.jpg",
     status: "For Co-Living",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Villa"
   },
   {
     id: 25,
     name: "Solly Nrown House.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
-    price: "255300",
+    price: "155300",
     image: "/images/house25.jpg",
     status: "For buy",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Apartment"
   },
   {
     id: 26,
@@ -295,6 +346,8 @@ export const data = [
     status: "For rent",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
+    case: "All",
+    type: "Houses"
   },
  
 

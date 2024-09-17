@@ -1,9 +1,42 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { data } from "@/app/_components/data";
 import Image from "next/image";
 import Link from "next/link";
+import Rpartners from "@/app/_components/Rpartners";
+import { useCart } from "@/app/_components/CartContext";
 
 export default function Page() {
+
+   // Access cart context using useCart hook
+   const { cart, addToCart, removeFromCart } = useCart();
+
+   // State for button text
+   const [addedToCart, setAddedToCart] = useState({});
+ 
+   // Function to handle adding to cart and updating button text
+   const handleAddToCart = (house) => {
+     addToCart({ ...house, id: house.id }); // Ensure `house` has an `id`
+     setAddedToCart((prevState) => ({ ...prevState, [house.id]: true }));
+   };
+ 
+   // Function to handle removing from cart and resetting button text
+   const handleRemoveFromCart = (house) => {
+     removeFromCart(house.id); // Remove the item from cart using its id
+     setAddedToCart((prevState) => ({ ...prevState, [house.id]: false }));
+   };
+ 
+   // Effect to reset addedToCart state when an item is removed from the cart
+   useEffect(() => {
+     const updatedAddedToCart = {};
+     cart.forEach((item) => {
+       updatedAddedToCart[item.id] = true;
+     });
+ 
+     setAddedToCart(updatedAddedToCart);
+   }, [cart]);
+
+
   return (
     <main className="max-w-[1260px] mx-auto p-4 h-full">
       {/* Contact Section */}
@@ -93,6 +126,23 @@ export default function Page() {
                   View Details
                 </Link>
               )}
+
+              {/* Add or Remove from Cart Button */}
+              {addedToCart[house.id] ? (
+                <button
+                  className="bg-[#92400e] text-white hover:bg-[#92400e] p-5 rounded-[10px]"
+                  onClick={() => handleRemoveFromCart(house)}
+                >
+                  Remove from Cart
+                </button>
+              ) : (
+                <button
+                  className="bg-[#3b83f6d6] text-white hover:bg-[#92400e] p-5 rounded-[10px]"
+                  onClick={() => handleAddToCart(house)}
+                >
+                  Add to Cart
+                </button>
+              )}
             </div>
           ))}
       </section>
@@ -157,10 +207,28 @@ export default function Page() {
                     View Details
                   </Link>
                 )}
+                  {/* Add or Remove from Cart Button */}
+              {addedToCart[house.id] ? (
+                <button
+                  className="bg-[#92400e] text-white hover:bg-[#92400e] p-5 rounded-[10px]"
+                  onClick={() => handleRemoveFromCart(house)}
+                >
+                  Remove from Cart
+                </button>
+              ) : (
+                <button
+                  className="bg-[#3b83f6d6] text-white hover:bg-[#92400e] p-5 rounded-[10px]"
+                  onClick={() => handleAddToCart(house)}
+                >
+                  Add to Cart
+                </button>
+              )}
               </div>
             );
           })}
       </section>
+       {/* Recommended Partners Section */}
+       <Rpartners />
     </main>
   );
 }

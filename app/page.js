@@ -1,5 +1,5 @@
-
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { PiCoinsFill } from "react-icons/pi";
 import { RiUserLocationFill } from "react-icons/ri";
@@ -9,8 +9,37 @@ import { CgArrowLongRight } from "react-icons/cg";
 import { data } from "@/app/_components/data";
 import Carousel from "./_components/Carousel";
 import Rpartners from "./_components/Rpartners";
+import { useCart } from "@/app/_components/CartContext";
 
 export default function Home() {
+  // Access cart context using useCart hook
+  const { cart, addToCart, removeFromCart } = useCart();
+
+  // State for button text
+  const [addedToCart, setAddedToCart] = useState({});
+
+  // Function to handle adding to cart and updating button text
+  const handleAddToCart = (house) => {
+    addToCart({ ...house, id: house.id }); // Ensure `house` has an `id`
+    setAddedToCart((prevState) => ({ ...prevState, [house.id]: true }));
+  };
+
+  // Function to handle removing from cart and resetting button text
+  const handleRemoveFromCart = (house) => {
+    removeFromCart(house.id); // Remove the item from cart using its id
+    setAddedToCart((prevState) => ({ ...prevState, [house.id]: false }));
+  };
+
+  // Effect to reset addedToCart state when an item is removed from the cart
+  useEffect(() => {
+    const updatedAddedToCart = {};
+    cart.forEach((item) => {
+      updatedAddedToCart[item.id] = true;
+    });
+
+    setAddedToCart(updatedAddedToCart);
+  }, [cart]);
+
   return (
     //  hero section
     <main className="max-w-[1260px] mx-auto p-4 height-[100%]">
@@ -59,9 +88,11 @@ export default function Home() {
         <h3 className="mt-4 sm:mt-7 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#3b83f6d6]">
           Popular Properties<span className="text-[#92400e]">.</span>
         </h3>
-        <div className=" absolute right-4 bottom-4 flex items-center font-bold hover:text-[#3b83f6d6]">
+
+        {/* Adjusting Flex Direction for Mobile Screens */}
+        <div className="absolute right-4 bottom-4 flex flex-col sm:flex-row items-center font-bold hover:text-[#3b83f6d6]">
           <Link href="/properties">
-            <h1 className=" text-sm sm:text-base lg:text-lg mr-1 text-[#3b83f6d6] hover:text-[#92400e] cursor-pointer">
+            <h1 className="text-sm sm:text-base lg:text-lg mr-1 text-[#3b83f6d6] hover:text-[#92400e] cursor-pointer">
               Explore all
             </h1>
           </Link>
@@ -123,12 +154,26 @@ export default function Home() {
                 >
                   View Details
                 </Link>
+                {/* Add or Remove from Cart Button */}
+                {addedToCart[house.id] ? (
+                  <button
+                    className="bg-[#92400e] text-white hover:bg-[#92400e] p-5 rounded-[10px]"
+                    onClick={() => handleRemoveFromCart(house)}
+                  >
+                    Remove from Cart
+                  </button>
+                ) : (
+                  <button
+                    className="bg-[#3b83f6d6] text-white hover:bg-[#92400e] p-5 rounded-[10px]"
+                    onClick={() => handleAddToCart(house)}
+                  >
+                    Add to Cart
+                  </button>
+                )}
               </div>
             );
           })}
       </section>
-
-    
 
       {/* END OF PROPERTIES SECTION */}
 
@@ -217,9 +262,6 @@ export default function Home() {
         <div className="mt-6 md:mt-10 flex flex-col md:flex-row justify-center md:justify-end text-center">
           <ul className="flex flex-wrap justify-center gap-4 md:gap-10">
             <li className="text-[#3b83f6d6] hover:text-[#92400e] text-xl md:text-2xl">
-              <Link href="/properties">Properties</Link>
-            </li>
-            <li className="text-[#3b83f6d6] hover:text-[#92400e] text-xl md:text-2xl">
               <Link href="/forbuy">For Buy</Link>
             </li>
             <li className="text-[#3b83f6d6] hover:text-[#92400e] text-xl md:text-2xl">
@@ -241,7 +283,7 @@ export default function Home() {
       <section className="mt-7 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
         {/* Property 1 */}
         {data
-          .filter((house) => house.price == "155200")
+          .filter((house) => house.feature == "three")
           .map((house) => {
             return (
               <div
@@ -285,6 +327,22 @@ export default function Home() {
                 >
                   View Details
                 </Link>
+                {/* Add or Remove from Cart Button */}
+                {addedToCart[house.id] ? (
+                  <button
+                    className="bg-[#92400e] text-white hover:bg-[#92400e] p-5 rounded-[10px]"
+                    onClick={() => handleRemoveFromCart(house)}
+                  >
+                    Remove from Cart
+                  </button>
+                ) : (
+                  <button
+                    className="bg-[#3b83f6d6] text-white hover:bg-[#92400e] p-5 rounded-[10px]"
+                    onClick={() => handleAddToCart(house)}
+                  >
+                    Add to Cart
+                  </button>
+                )}
               </div>
             );
           })}
@@ -337,9 +395,11 @@ export default function Home() {
         <h3 className="mt-4 sm:mt-7 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#3b83f6d6]">
           Find Your Neighborhood<span className="text-[#92400e]">.</span>
         </h3>
-        <div className="absolute right-4 sm:right-6 bottom-1 flex items-center font-bold hover:text-[#3b83f6d6]">
+
+        {/* Adjusting Flex Direction for Mobile Screens */}
+        <div className="absolute  top-4 right-1 sm:right-6 bottom-1 flex flex-col sm:flex-row items-center font-bold hover:text-[#3b83f6d6]">
           <Link href="/properties">
-            <span className="text-sm sm:text-base lg:text-lg mr-1 text-[#3b83f6d6] hover:text-[#92400e] cursor-pointer">
+            <span className="text-sm sm:text-base lg:text-lg mb-2 sm:mb-0 sm:mr-1 text-[#3b83f6d6] hover:text-[#92400e] cursor-pointer">
               Explore all
             </span>
           </Link>
@@ -381,9 +441,11 @@ export default function Home() {
             height={1000}
             className="object-cover mx-auto rounded-lg"
           />
+           <Link href="/fransico">
           <h4 className="font-semibold mt-5 text-2xl sm:text-3xl text-[#3b83f6d6] hover:text-[#92400e]">
             San Francisco
           </h4>
+          </Link>
           <p className="text-gray-600 mt-2 font-bold underline underline-offset-1 hover:text-[#92400e]">
             4 Properties
           </p>
@@ -398,9 +460,11 @@ export default function Home() {
             height={1000}
             className="object-cover mx-auto rounded-lg"
           />
+          <Link href="/washington">
           <h4 className="font-semibold mt-5 text-2xl sm:text-3xl text-[#3b83f6d6] hover:text-[#92400e]">
             Washington D.C.
           </h4>
+          </Link>
           <p className="text-gray-600 mt-2 font-bold underline underline-offset-1 hover:text-[#92400e]">
             2 Properties
           </p>
@@ -668,4 +732,3 @@ export default function Home() {
     </main>
   );
 }
-

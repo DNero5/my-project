@@ -1,24 +1,80 @@
 
 "use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import emailjs from "emailjs-com"; // Import EmailJS
 
 export default function Footer() {
+
+    // State to hold the email input value
+  const [email, setEmail] = useState("");
+
+  // Function to handle form submission
+  const sendEmail = (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    // Replace these with your EmailJS credentials
+    const serviceID = "QA8X3fG97QebVe8xe";
+    const templateID = "template_iivmuhj";
+    const userID = "-fewInrnL4LV4fP6sJGxu";
+
+    // Prepare the email data
+    const templateParams = {
+      email: email,
+    };
+
+    // Send email using EmailJS
+    emailjs
+      .send(serviceID, templateID, templateParams, userID)
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Your email has been sent successfully!");
+        },
+        (err) => {
+          console.error("FAILED...", err);
+          alert("Failed to send email. Please try again.");
+        }
+      );
+
+    // Reset the email input field
+    setEmail("");
+  };
+
+
     return (
         <main className="max-w-[1260px] mx-auto p-4 height-[100%]">
         <div className="text-gray-800 lg:mt-20">
-            {/* Header Section */}
-            <header className="bg-white p-4 shadow">
-                <div className="container mx-auto text-center">
-                    <h1 className="text-2xl font-semibold">Are you a Home Owner?</h1>
-                    <p className="text-orange-500 mt-2">Put your email address and get listed.</p>
-                    <div className="mt-4 flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-3">
-                        <input type="email" placeholder="Enter your email here..." className="p-2 border border-gray-300 rounded w-full md:w-auto" />
-                        <button className="bg-[#3b83f6d6] text-white hover:bg-[#92400e] p-2 rounded w-full md:w-auto">Get Listed</button>
-                    </div>
-                </div>
-            </header>
+          {/* Header Section */}
+          <header className="bg-white p-4 shadow">
+            <div className="container mx-auto text-center">
+              <h1 className="text-2xl font-semibold">Are you a Home Owner?</h1>
+              <p className="text-orange-500 mt-2">
+                Put your email address and get listed.
+              </p>
+              <form
+                className="mt-4 flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-3"
+                onSubmit={sendEmail}
+              >
+                <input
+                  type="email"
+                  placeholder="Enter your email here..."
+                  className="p-2 border border-gray-300 rounded w-full md:w-auto"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)} // Update state on input change
+                  required
+                />
+                <button
+                  type="submit" // Change button type to submit
+                  className="bg-[#3b83f6d6] text-white hover:bg-[#92400e] p-2 rounded w-full md:w-auto"
+                >
+                  Get Listed
+                </button>
+              </form>
+            </div>
+          </header>
 
             {/* Main Content */}
             <main className="container mx-auto mt-8 text-center">
@@ -92,9 +148,7 @@ export default function Footer() {
                 </div>
             </footer>
 
-            {/* FontAwesome for icons */}
-            <script src="https://kit.fontawesome.com/a076d05399.js" crossOrigin="anonymous"></script>
-        </div>
+            </div>
         </main>
     );
 }

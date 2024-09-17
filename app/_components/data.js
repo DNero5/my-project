@@ -11,12 +11,13 @@ export const data = [
     amenities: "3 Bed - 2 Bath - 1 Garage",
     add: "explore",
     case: "All",
-     type: "Houses"
+     type: "Houses",
+     place: "San Fransico"
   },
 
   {
     id: 2,
-    name: "Duplex de Villa.",
+    name: "Duplex Villa.",
     location: "18B Central Street, New York",
     date: "Added: March 8, 2023",
     price: "255200",
@@ -27,11 +28,12 @@ export const data = [
     add: "explore",
     case: "All",
      type: "Apartment"
+
   },
 
   {
     id: 3,
-    name: "Orchid Casel de Paradise.",
+    name: "Orchid  Paradise.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
     price: "355200",
@@ -45,8 +47,8 @@ export const data = [
   },
   {
     id: 4,
-    name: "Orchid Casel de Evian.",
-    location: "18B Central Street, Sun Francisco",
+    name: "Orchid Casel  Evian.",
+    location: "18B Central Street, San Francisco",
     date: "Added: March 8, 2023",
     price: "155200",
     image: "/images/house4.jpg",
@@ -54,12 +56,13 @@ export const data = [
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     case: "All",
-    type: "Houses"
+    type: "Houses",
+    place: "San Fransico"
   },
 
   {
     id: 5,
-    name: "Gose Hill Mansion.",
+    name: "Nero Hill Mansion.",
     location: "194 Mercer Street, Washington",
     date: "Added: March 8, 2023",
     price: "255200",
@@ -68,11 +71,12 @@ export const data = [
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     case: "All",
-    type: "Apartment"
+    type: "Apartment",
+    place: "Washington"
   },
   {
     id: 6,
-    name: "Parriet Whillips Dungalow.",
+    name: "Safe Whillips Dungalow.",
     location: "5B Central Street, California",
     date: "Added: March 8, 2023",
     price: "355200",
@@ -85,7 +89,7 @@ export const data = [
   },
   {
     id: 7,
-    name: "Ruposibangla de Omo.",
+    name: "Ruposibangla de James.",
     location: "18A Central Street, New York",
     date: "Added: March 8, 2023",
     price: "155300",
@@ -99,7 +103,7 @@ export const data = [
   },
   {
     id: 8,
-    name: "Kelvin Studio Palace.",
+    name: "Victoria Studio Palace.",
     location: "18B Central Street, New York",
     date: "Added: March 8, 2023",
     price: "255300",
@@ -113,7 +117,7 @@ export const data = [
   },
   {
     id: 9,
-    name: "Gose Hill Mansion.",
+    name: "Sunday Hill Mansion.",
     location: "18C Central Street, New York",
     date: "Added: March 8, 2023",
     price: "355300",
@@ -127,21 +131,21 @@ export const data = [
   },
   {
     id: 10,
-    name: "Damola Garden Resedence.",
-    location: "18B Central Street, Chicago",
+    name: "Monday Garden Resedence.",
+    location: "18B Central Street, San Francisco",
     date: "Added: March 8, 2023",
     price: "155300",
     image: "/images/house10.jpg",
     status: "For buy",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
-    place: "Chicago",
+    place: "San Fransico",
     case: "All",
     type: "Apartment"
   },
   {
     id: 11,
-    name: "Elite Garden Resedence.",
+    name: " Friday Elite Garden.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
     price: "255300",
@@ -154,21 +158,20 @@ export const data = [
   },
   {
     id: 12,
-    name: "kelvin Villa.",
-    location: "18B Central Street, Chicago",
+    name: "Hakimi House.",
+    location: "18B Central Street, San Francisco",
     date: "Added: March 8, 2023",
     price: "355300",
     image: "/images/house3.jpg",
     status: "For Co-Living",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
-    place: "Chicago",
     case: "All",
     type: "Villa"
   },
   {
     id: 13,
-    name: "David Villa.",
+    name: "Lionel Villa.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
     price: "155300",
@@ -177,11 +180,12 @@ export const data = [
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     case: "All",
-    type: "Apartment"
+    type: "Apartment",
+    place: "Chicago"
   },
   {
     id: 14,
-    name: "Emekus Appartment.",
+    name: "Rodri Appartment.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
     price: "255300",
@@ -190,11 +194,12 @@ export const data = [
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     case: "All",
-    type: "Houses"
+    type: "Houses",
+    place: "Chicago"
   },
   {
     id: 15,
-    name: "Solly Nrown House.",
+    name: "Foden Nrown House.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
     price: "355300",
@@ -207,7 +212,7 @@ export const data = [
   },
   {
     id: 16,
-    name: "Gose Hill Mansion.",
+    name: "Saka Hill Mansion.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
     price: "155300",
@@ -221,20 +226,21 @@ export const data = [
   },
   {
     id: 17,
-    name: "Esaac Dell House.",
-    location: "18B Central Street, Chicago",
+    name: "Nketiah Sunny House.",
+    location: "18B Central Street, San Francisco",
     date: "Added: March 8, 2023",
-    price: "255300",
+    price: "155200",
     image: "/images/house17.jpg",
-    status: "For sale",
+    status: "for rent",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     case: "All",
-    type: "Houses"
+     type: "Houses",
+     place: "San Fransico",
   },
   {
     id: 18,
-    name: "Parriet Whillips Dungalow.",
+    name: "Amad Whillips Dungalow.",
     location: "18B Central Street, New York",
     date: "Added: March 8, 2023",
     price: "355300",
@@ -247,7 +253,7 @@ export const data = [
   },
   {
     id: 19,
-    name: "Darold Lloyd Estate.",
+    name: "Haaland Lloyd Estate.",
     location: "18B Central Street, New York",
     date: "Added: March 8, 2023",
     price: "155300",
@@ -260,20 +266,21 @@ export const data = [
   },
   {
     id: 20,
-    name: "Sinomen plant Palace.",
-    location: "18B Central Street,New York",
+    name: "Bernardo plant Palace.",
+    location: "18B Central Street, Washington ",
     date: "Added: March 8, 2023",
     price: "255300",
-    image: "/images/house1.jpg",
+    image: "/images/house7.jpg",
     status: "For sale",
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     case: "All",
-    type: "Houses"
+    type: "Houses",
+    place: "Washington"
   },
   {
     id: 21,
-    name: "Duplex de Villa.",
+    name: "Ronaldo de Villa.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
     price: "355300",
@@ -286,7 +293,7 @@ export const data = [
   },
   {
     id: 22,
-    name: "Orchid Casel de Paradise.",
+    name: "Messi Paradise.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
     price: "155300",
@@ -299,7 +306,7 @@ export const data = [
   },
   {
     id: 23,
-    name: "Ruposibangla de parlosia.",
+    name: "Saliba parlosia.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
     price: "255300",
@@ -308,11 +315,13 @@ export const data = [
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     case: "All",
-    type: "Houses"
+    type: "Houses",
+    feature: "three"
+
   },
   {
     id: 24,
-    name: "Sinomen Studio Palace.",
+    name: "Wizkid Studio Palace.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
     price: "355300",
@@ -321,11 +330,12 @@ export const data = [
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     case: "All",
-    type: "Villa"
+    type: "Villa",
+    feature: "three"
   },
   {
     id: 25,
-    name: "Solly Nrown House.",
+    name: "Davido Nrown House.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
     price: "155300",
@@ -334,11 +344,12 @@ export const data = [
     size: "1450",
     amenities: "3 Bed - 2 Bath - 1 Garage",
     case: "All",
-    type: "Apartment"
+    type: "Apartment",
+    feature: "three"
   },
   {
     id: 26,
-    name: "Elite Garden Resedence.",
+    name: "Dennis Resedence.",
     location: "18B Central Street, Chicago",
     date: "Added: March 8, 2023",
     price: "255300",

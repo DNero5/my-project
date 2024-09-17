@@ -48,30 +48,38 @@ export default function Page({ params }) {
                   {property.name}
                 </h2>
                 <h2 className="text-2xl font-bold">
-                  <span className="text-[#3b83f6d6]">Location:</span> {property.location}
+                  <span className="text-[#3b83f6d6]">Location:</span>{" "}
+                  {property.location}
                 </h2>
                 <h2 className="text-2xl font-bold">
-                  <span className="text-[#3b83f6d6]">Date:</span> {property.date}
+                  <span className="text-[#3b83f6d6]">Date:</span>{" "}
+                  {property.date}
                 </h2>
                 <h2 className="text-2xl font-bold">
-                  <span className="text-[#3b83f6d6]">Price:</span> {property.price}
+                  <span className="text-[#3b83f6d6]">Price:</span>{" "}
+                  {property.price}
                 </h2>
                 <h2 className="text-2xl font-bold">
-                  <span className="text-[#3b83f6d6]">Status:</span> {property.status}
+                  <span className="text-[#3b83f6d6]">Status:</span>{" "}
+                  {property.status}
                 </h2>
                 <h2 className="text-2xl font-bold">
-                  <span className="text-[#3b83f6d6]">Size:</span> {property.size} Sq.ft
+                  <span className="text-[#3b83f6d6]">Size:</span>{" "}
+                  {property.size} Sq.ft
                 </h2>
                 <h2 className="text-2xl font-bold">
-                  <span className="text-[#3b83f6d6]">Amenities:</span> {property.amenities}
+                  <span className="text-[#3b83f6d6]">Amenities:</span>{" "}
+                  {property.amenities}
                 </h2>
                 <p className="text-gray-600 mt-4 font-semibold">
-                  Huge number of properties available here for buy, sell, and rent.
-                  Also, you find co-living properties here, lots of opportunities to choose from,
-                  and enjoy huge discounts. You can get these cases perfectly simple and easy
-                  to distinguish. In a free hour, when our power of choice is untrammeled, and
-                  when nothing prevents us from being able to do what we like best, every pleasure
-                  is welcomed, and every pain avoided are matters of choice.
+                  Huge number of properties available here for buy, sell, and
+                  rent. Also, you find co-living properties here, lots of
+                  opportunities to choose from, and enjoy huge discounts. You
+                  can get these cases perfectly simple and easy to distinguish.
+                  In a free hour, when our power of choice is untrammeled, and
+                  when nothing prevents us from being able to do what we like
+                  best, every pleasure is welcomed, and every pain avoided are
+                  matters of choice.
                 </p>
               </div>
             </div>
@@ -84,7 +92,10 @@ export default function Page({ params }) {
             </h3>
             <form className="space-y-4">
               <div>
-                <label className="block text-sm text-[#3b83f6d6] mb-2" htmlFor="location">
+                <label
+                  className="block text-sm text-[#3b83f6d6] mb-2"
+                  htmlFor="location"
+                >
                   <i className="fas fa-map-marker-alt text-[#3b83f6d6] mr-2"></i>
                   Location
                 </label>
@@ -97,8 +108,12 @@ export default function Page({ params }) {
                 />
               </div>
               <div>
-                <label className="block text-sm text-[#3b83f6d6] mb-2" htmlFor="category">
-                  <i className="fas fa-th-large text-[#3b83f6d6] mr-2"></i>Property Category
+                <label
+                  className="block text-sm text-[#3b83f6d6] mb-2"
+                  htmlFor="category"
+                >
+                  <i className="fas fa-th-large text-[#3b83f6d6] mr-2"></i>
+                  Property Category
                 </label>
                 <select
                   id="category"
@@ -109,6 +124,59 @@ export default function Page({ params }) {
                   <option>Property Type B</option>
                 </select>
               </div>
+              <div>
+                <label
+                  className="block text-sm text-[#3b83f6d6] mb-2"
+                  htmlFor="category"
+                >
+                  <i className="fas fa-list text-[#3b83f6d6] mr-2"></i>
+                  Property Type
+                </label>
+                <select
+                  id="category"
+                  className="w-full border border-[#3b83f6d6] px-4 py-2 text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-[#92400e] focus:border-transparent"
+                >
+                  <option>Property Type</option>
+                  <option>Category</option>
+                  <option>Property</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  className="block text-sm text-[#3b83f6d6] mb-2"
+                  htmlFor="category"
+                >
+                  <i className="fas fa-sliders-h text-[#3b83f6d6] mr-2"></i>
+                  Property Size Range
+                </label>
+                <select
+                  id="category"
+                  className="w-full border border-[#3b83f6d6] px-4 py-2 text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-[#92400e] focus:border-transparent"
+                >
+                  <option>Property Size</option>
+                  <option>1200 sqft</option>
+                  <option>1500 sqft</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  className="block text-sm text-[#3b83f6d6] mb-2"
+                  htmlFor="category"
+                >
+                  <i className="fas fa-ruler-combined text-[#3b83f6d6] mr-2"></i>
+                  Property Size
+                </label>
+                <select
+                  id="category"
+                  className="w-full border border-[#3b83f6d6] px-4 py-2 text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-[#92400e] focus:border-transparent"
+                >
+                  <option>Property Size</option>
+                  <option>1200 sqft</option>
+                  <option>1500 sqft</option>
+                </select>
+              </div>
+
               {/* Other Form Fields */}
               <button
                 type="submit"

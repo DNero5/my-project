@@ -2,6 +2,7 @@
 import React from "react";
 import { data } from "@/app/_components/data";
 import Rpartners from "@/app/_components/Rpartners";
+import Image from "next/image";
 
 export default function Page({ params }) {
   const property = data.find(
@@ -38,7 +39,7 @@ export default function Page({ params }) {
           {/* Property Image and Details */}
           <div className="w-full md:w-2/3">
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img
+              <Image
                 src={property.image}
                 alt="Property Image"
                 className="w-full h-auto"

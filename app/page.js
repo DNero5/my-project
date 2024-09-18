@@ -362,9 +362,9 @@ export default function Home() {
             Watch the video to make your decision easier.
           </h1>
           <p className="mt-6 mb-5 text-lg md:text-xl text-[#92400e]">
-            A huge number of properties are available here for buying, selling,
+          &lsquo;A huge number of properties are available here for buying, selling,
             and renting. You'll also find co-living properties, giving you lots
-            of opportunities to choose and enjoy huge discounts.
+            of opportunities to choose and enjoy huge discounts.&rsquo;
           </p>
           <div className="text-[#3b83f6d6] hover:text-[#92400e]">
             <Link href="/properties" className="flex items-center gap-3 ">
@@ -379,9 +379,9 @@ export default function Home() {
             className="w-full h-48 sm:h-56 md:h-72 lg:h-[700px]"
             src="https://www.youtube.com/embed/d_yzP4qnZwQ?start=10"
             title="House Tour Video"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
       </section>

@@ -48,9 +48,9 @@ export default function Carousel() {
             </div>
             <div className="mt-8 text-center md:text-left">
               <p className="text-xl md:text-3xl italic font-medium text-gray-900">
-                "Bary do a great job to find the perfect home. It's very easy
+              &ldquo;Bary do a great job to find the perfect home. It's very easy
                 for everyone to buy, sell, or rent property. We believe they
-                continue their great service."
+                continue their great service.&rdquo;
               </p>
               <p className="text-lg md:text-3xl mt-4 text-[#92400e] font-semibold">
                 Michael Richard
@@ -86,9 +86,9 @@ export default function Carousel() {
             </div>
             <div className="mt-8 text-center md:text-left">
               <p className="text-xl md:text-3xl italic font-medium text-gray-900">
-                "Bary do a great job to find the perfect home. It's very easy
+              &ldquo;Bary do a great job to find the perfect home. It's very easy
                 for everyone to buy, sell, or rent property. We believe they
-                continue their great service."
+                continue their great service.&rdquo;
               </p>
               <p className="text-lg md:text-3xl mt-4 text-[#92400e] font-semibold">
                 Daniel Sunday
@@ -124,9 +124,9 @@ export default function Carousel() {
             </div>
             <div className="mt-8 text-center md:text-left">
               <p className="text-xl md:text-3xl italic font-medium text-gray-900">
-                "Bary do a great job to find the perfect home. It's very easy
+              &ldquo;Bary do a great job to find the perfect home. It's very easy
                 for everyone to buy, sell, or rent property. We believe they
-                continue their great service."
+                continue their great service.&rdquo;
               </p>
               <p className="text-lg md:text-3xl mt-4 text-[#92400e] font-semibold">
                 Lionel Messi

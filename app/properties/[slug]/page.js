@@ -42,8 +42,11 @@ export default function Page({ params }) {
               <Image
                 src={property.image}
                 alt="Property Image"
+                width={500} // Set width to a specific value, e.g., 500px
+                height={300} // Optionally add height to maintain aspect ratio
                 className="w-full h-auto"
               />
+
               <div className="mt-7">
                 <h2 className="text-4xl font-bold text-[#3b83f6d6] mt-2">
                   {property.name}

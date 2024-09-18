@@ -48,7 +48,7 @@ export default function Carousel() {
             </div>
             <div className="mt-8 text-center md:text-left">
               <p className="text-xl md:text-3xl italic font-medium text-gray-900">
-              &lsquo; Bary do a great job to find the perfect home. It's very easy
+              &lsquo; Bary do a great job to find the perfect home. It&lsquo;s very easy
                 for everyone to buy, sell, or rent property. We believe they
                 continue their great service. &rsquo;
               </p>
@@ -86,7 +86,7 @@ export default function Carousel() {
             </div>
             <div className="mt-8 text-center md:text-left">
             <p className="text-xl md:text-3xl italic font-medium text-gray-900">
-              &lsquo; Bary do a great job to find the perfect home. It's very easy
+            &lsquo; Bary do a great job to find the perfect home. It&lsquo;s very easy
                 for everyone to buy, sell, or rent property. We believe they
                 continue their great service. &rsquo;
               </p>
@@ -124,7 +124,7 @@ export default function Carousel() {
             </div>
             <div className="mt-8 text-center md:text-left">
               <p className="text-xl md:text-3xl italic font-medium text-gray-900">
-              &lsquo; Bary do a great job to find the perfect home. It's very easy
+              &lsquo; Bary do a great job to find the perfect home. It&lsquo;s very easy
                 for everyone to buy, sell, or rent property. We believe they
                 continue their great service. &rsquo;
               </p>

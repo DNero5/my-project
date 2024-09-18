@@ -363,7 +363,7 @@ export default function Home() {
           </h1>
           <p className="mt-6 mb-5 text-lg md:text-xl text-[#92400e]">
           &lsquo; A huge number of properties are available here for buying, selling,
-            and renting. You'll also find co-living properties, giving you lots
+            and renting. You&lsquo;ll also find co-living properties, giving you lots
             of opportunities to choose and enjoy huge discounts. &rsquo;
           </p>
           <div className="text-[#3b83f6d6] hover:text-[#92400e]">
